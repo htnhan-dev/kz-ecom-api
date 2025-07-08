@@ -36,7 +36,7 @@ app.get("/api/products", async (req: Request, res: Response): Promise<any> => {
     const products = await Product.find();
     return res.status(200).json({
       message: "Find Products successfully",
-      data: [],
+      data: products,
     });
   } catch (err) {
     return res.status(500).json({ message: "Something went wrong" });
