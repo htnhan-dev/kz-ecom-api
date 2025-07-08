@@ -24,10 +24,10 @@ mongoose
   .then(() => console.log("✅ Connected to MongoDB"))
   .catch((err) => console.error("❌ MongoDB connection error:", err));
 
-app.get("/",  async(_req, res) => {
+app.get("/", async (_req, res) => {
   res.send("Hello from API 👋");
   await Product.create({
-    name: 'Iphone 12 Promax',
+    name: "Iphone 12 Promax",
   });
 });
 
@@ -36,7 +36,7 @@ app.get("/api/products", async (req: Request, res: Response): Promise<any> => {
     const products = await Product.find();
     return res.status(200).json({
       message: "Find Products successfully",
-      data: products,
+      data: [],
     });
   } catch (err) {
     return res.status(500).json({ message: "Something went wrong" });
