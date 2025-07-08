@@ -23,7 +23,7 @@ jobs:
 
       - name: Deploy API via SSH
         run: |
-          ssh -i ~/.ssh/id_ed25519 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
+          ssh -p 8686 -i ~/.ssh/id_ed25519 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
             cd /root/applications/kz-ecom/api
             git pull origin main
             cd ..
